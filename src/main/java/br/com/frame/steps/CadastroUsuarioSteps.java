@@ -20,21 +20,21 @@ public class CadastroUsuarioSteps {
 	
 	@Dado("^que estou logado com usuario \"([^\"]*)\"$")
 	public void que_estou_logado_com_usuario(String user) {
-		login.LoginSrBarriga(user);
+		this.login.LoginSrBarriga(user);
 	}
 
 	@Dado("^clico em adicionar um novo usuario$")
-	public void clico_em_adicionar_um_novo_usuario() {
+	public void clico_em_adicionar_um_novo_usuario() throws InterruptedException {
 	    this.addContas.clickAdicionar();
 	}
 
-	@Quando("^adiciono o novo usuario \"([^\"]*)\"$")
-	public void adicionoONovoUsuario(String novoUsuario) {
-		this.addContas.adicionarUsuario(novoUsuario);
+	@Quando("^adiciono o novo usuario")
+	public void adicionoONovoUsuario() throws InterruptedException {
+		this.addContas.adicionarUsuario();
 	}
 
 	@Entao("^apresanta a mensagem \"([^\"]*)\"$")
-	public void apresanta_a_mensagem(String msg) {
+	public void apresanta_a_mensagem(String msg) throws InterruptedException {
 	   assertEquals(msg, this.addContas.obterTextoConfirmacao());
 	}
 

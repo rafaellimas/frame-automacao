@@ -23,8 +23,8 @@ public class HomePage {
 	private WebElement resumoMensal;
 	
 	
-	public HomePage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public HomePage(WebDriver webDriver) {
+		PageFactory.initElements(webDriver, this);
 	}
 
 
